@@ -1,0 +1,22 @@
+#!/bin/bash
+
+OTHER=""
+
+for repo in `ls -d */`; do
+  cd $repo
+  if [[
+    master != `git branch --show-current` ||
+    `git status --short | wc -c` -ne 0
+  ]]; then
+    OTHER=" other"
+    printf "========== \e[1;34m$repo\e[0m ==========\n"
+    git status
+    printf "\n\n"
+  fi
+  cd ..
+done
+
+if [[ $OTHER != "" ]]; then
+  printf "==================================\n\n"
+fi
+printf "\e[1;32mAll%s projects on clean master\e[0m\n" "$OTHER"
