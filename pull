@@ -7,22 +7,21 @@ for repo in $(
   | jq -r '.[].name'
 ); do
   if test -d "./$repo"; then
-    printf "\n\n========== pulling latest \e[1;34m$repo\e[0m ==========\n"
-
-    cd $repo
-    if [[ master != `git branch --show-current` ]]; then
-      printf "\n\n\e[1;31mSKIPPING\e[0m, not on master\n"
-      git status
-    elif [[ `git status --short | wc -c` -ne 0 ]]; then
-      printf "\n\n\e[1;31mSKIPPING\e[0m, working tree not clean \n"
-      git status
-    else
-      git pull origin master
-    fi
-    cd ..
+    printf "\n\n========== pulling latest \e[1;34m%s\e[0m ==========\n" "$repo"
+    (
+      cd "$repo" || return;
+      if [[ master != $(git branch --show-current) ]]; then
+        printf "\n\n\e[1;31mSKIPPING\e[0m, not on master\n"
+        git status
+      elif [[ $(git status --short | wc -c) -ne 0 ]]; then
+        printf "\n\n\e[1;31mSKIPPING\e[0m, working tree not clean \n"
+        git status
+      else
+        git pull origin master
+      fi
+    )
   else
-    printf "\n\n========== cloning \e[1;34m$repo\e[0m ==========\n"
-
-    hub clone $ORG/$repo
+    printf "\n\n========== cloning \e[1;34m%s\e[0m ==========\n" "$repo"
+    git clone "git@github.com:$ORG/$repo";
   fi
 done
