@@ -22,7 +22,7 @@ If you've done the last step, you can change into your local near-examples
 folder (following the example above, this would be `~/code/n/x`) and
 
 * run `pull` to fetch the latest `master` for all `near-examples` repositories
-* run `status` to quickly find out if all projects are up-to-date
+* run `status` to quickly find out if all projects have `master` checked out with a clean working tree
 
 If you don't complete the last step, you will have to type `./bin/pull` and
 `./bin/status` instead.
