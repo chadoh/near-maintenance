@@ -4,7 +4,13 @@ NEAR Examples maintenance scripts
 A couple scripts to quickly fetch & update all repositories from the
 https://github.com/near-examples organization
 
+![demo running status and pull](https://repository-images.githubusercontent.com/272589316/ebb9e480-af59-11ea-8aee-ad0a44455a8b)
+
 _NOTE: These scripts have only been tested on macOS_
+
+
+Use it
+======
 
 First, set up a token for pulling repositories:
 
