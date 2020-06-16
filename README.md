@@ -13,7 +13,7 @@ Use it
 ======
 
 * Install prerequisites: `brew install jq`
-* Must have ssh key added to GitHub
+* Must have [ssh key added to GitHub](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
 * Set up a new directory where you want to clone _only_ the `near-examples`
   repositories (example: `~/code/n/x/`)
 * Clone this repository into that new directory
