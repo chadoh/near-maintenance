@@ -2,16 +2,16 @@
 
 OTHER=""
 
-for repo in `ls -d */`; do
-  cd $repo
+for repo in  *; do
+  cd "$repo" || return;
   if [[
-    master != `git branch --show-current` ||
-    `git status --short | wc -c` -ne 0
+    master != $(git rev-parse --abbrev-ref HEAD) ||
+    $(git status --short | wc -c) -ne 0
   ]]; then
     OTHER=" other"
-    printf "========== \e[1;34m$repo\e[0m ==========\n"
+    printf "========== \e[1;34m%s\e[0m ==========\n" "$repo";
     git status
-    printf "\n\n"
+    printf "\n\n";
   fi
   cd ..
 done

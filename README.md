@@ -12,7 +12,8 @@ _NOTE: These scripts have only been tested on macOS_
 Use it
 ======
 
-* Install prerequisites: `brew install jq hub`
+* Install prerequisites: `brew install jq`
+* Must have ssh key added to GitHub
 * Set up a new directory where you want to clone _only_ the `near-examples`
   repositories (example: `~/code/n/x/`)
 * Clone this repository into that new directory
