@@ -15,7 +15,7 @@ for repo in */; do
     # set OTHER variable if any repository found to have dirty working tree
     OTHER=" other"
     printf "========== \e[1;34m%s\e[0m ==========\n" "$repo";
-    git status
+    git status "$@"
     printf "\n\n";
   fi
 
