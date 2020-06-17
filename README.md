@@ -27,6 +27,9 @@ folder (following the example above, this would be `~/code/n/x`) and
   with a clean working tree. You can pass options that you would normally pass
   to `git status`, such as `-s` for short output.
 * run `run some command` to run "some command" in each repository
+* use `dirty` to do things like quickly commit a bunch of changes. Example:
+
+      for x in $(dirty); do (cd $x && git add --all && git commit -m "cool" && git push); done
 
 If you don't complete the last step, you will have to type `./bin/pull` and
 `./bin/status` instead.
