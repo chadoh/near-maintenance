@@ -16,7 +16,7 @@ for repo in */; do
     OTHER=" other"
     printf "========== \e[1;34m%s\e[0m ==========\n" "$repo";
     git status "$@"
-    printf "\n\n";
+    printf "\n";
   fi
 
   cd ..
