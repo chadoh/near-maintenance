@@ -12,6 +12,20 @@ _NOTE: These scripts have only been tested on macOS_
 Use it
 ======
 
+First, set up a token for pulling repositories:
+
+* Go to https://github.com/settings/tokens
+* Click "Generate new token"
+* Give it a good "Note", like "'zamples scripting"
+* Don't check any boxes; it's just pulling public repos
+* Scroll down and hit "Generate token"
+* In your `~/.bashrc` or equivalent, export an environment variable called
+  `ZAMPLES_GITHUB_TOKEN` with the value of your new token
+
+      ZAMPLES_GITHUB_TOKEN=the_value_github_gave_you
+
+Now install some dependencies & clone this repo into a sensible location:
+
 * Install prerequisites: `brew install jq`
 * Must have [ssh key added to GitHub](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
 * Set up a new directory where you want to clone _only_ the `near-examples`
